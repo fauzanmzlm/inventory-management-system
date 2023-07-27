@@ -1,7 +1,14 @@
+// This file defines a JavaScript class called "User," 
+// which contains methods related to handling user 
+// authentication and token management.
+
+// Import Class
 import Token from './Token';
 import AppStorage from './AppStorage';
 
 class User {
+    
+    // This method extracts the access token and username from the login response and stores them in local storage using the "AppStorage" class.
     responseAfterLogin(response) {
         const access_token = response.data.access_token
         const username = response.data.name

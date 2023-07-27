@@ -1,5 +1,3 @@
-
-
 require('./bootstrap');
 
 import Vue from 'vue'
@@ -10,8 +8,9 @@ Vue.use(VueRouter)
 import { routes } from './routes';
 
 // Import User Class
+// The "User" class from User.js is imported and assigned to the global "window.User" variable, making it accessible throughout the application.
 import User from './helpers/User';
-window.User = User
+window.User = User;
 
 const router = new VueRouter({
     routes,
