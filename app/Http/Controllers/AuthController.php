@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Users\StoreUserRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Tymon\JWTAuth\Facades\JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -34,6 +35,8 @@ class AuthController extends Controller
 
         return $this->respondWithToken($token);
     }
+
+
 
     /**
      * Get the authenticated User.
@@ -64,7 +67,20 @@ class AuthController extends Controller
      */
     public function refresh()
     {
-        return $this->respondWithToken(auth()->refresh());
+        return $this->respondWithToken(Auth::refresh());
+    }
+
+    public function signup(StoreUserRequest $request) 
+    {
+        $data = $request->validated();
+
+        $user = User::create([
+            'email' => $data['email'],
+            'name' => $data['name'],
+            'password' => Hash::make($data['password'] ),
+        ]);
+
+        return $this->login($request);
     }
 
     /**
@@ -79,7 +95,7 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => Auth::factory()->getTTL() * 60
         ]);
     }
 }
