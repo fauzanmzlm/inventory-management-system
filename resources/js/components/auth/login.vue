@@ -62,7 +62,10 @@
         methods: {
             login() {
                 axios.post('/api/auth/login', this.form)
-                    .then(response => User.responseAfterLogin(response))
+                    .then(response => {
+                        User.responseAfterLogin(response)
+                        this.$router.push({ name: 'home' })
+                    })
                     .catch(error => console.log(error.response.data))
             }
         }
