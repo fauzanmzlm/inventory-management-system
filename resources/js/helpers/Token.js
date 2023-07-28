@@ -2,12 +2,12 @@
 
 class Token {
 
-    // The "isValid" method checks if the token is valid by decoding it and verifying the "iss" (issuer) claim against specific endpoints, "/api/auth/login" or "/api/auth/signup."
+    // The "isValid" method checks if the token is valid by decoding it and verifying the "iss" (issuer) claim against specific endpoints.
     isValid (token) {
         const payload = this.payload(token)
 
         if (payload) {
-            return payload.iss = "http://127.0.0.1:8000/api/auth/login" || "http://127.0.0.1:8000/api/auth/signup" ? true : false
+            return payload.iss = "http://127.0.0.1:8000/api/auth/login" || "http://127.0.0.1:8000/api/auth/register" ? true : false
         }
 
         return false
