@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Api\EmployeeController;
 
+// Authentication
 Route::group([
 
     'middleware' => 'api',
@@ -17,3 +19,6 @@ Route::group([
     Route::post('me', [AuthController::class, 'me']);
 
 });
+
+// Employee
+Route::apiResource('/employee', EmployeeController::class);
