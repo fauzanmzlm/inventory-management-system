@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Api\EmployeeController;
+use App\Http\Controllers\Api\SupplierController;
 
 // Authentication
 Route::group([
@@ -20,5 +21,5 @@ Route::group([
 
 });
 
-// Employee
 Route::apiResource('/employee', EmployeeController::class);
+Route::apiResource('/supplier', SupplierController::class);
