@@ -117,7 +117,7 @@ class EmployeeController extends Controller
         $data['name'] = $request->name;
         $data['email'] = $request->email;
         $data['phone'] = $request->phone;
-        $data['sallery'] = $request->sallery;
+        $data['salary'] = $request->salary;
         $data['address'] = $request->address;
         $data['nid'] = $request->nid;
         $data['joining_date'] = $request->joining_date;
