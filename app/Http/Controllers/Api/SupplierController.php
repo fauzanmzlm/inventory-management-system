@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Supplier;
 use Illuminate\Support\Facades\DB;
-use Image;
-
+use Intervention\Image\Facades\Image;
 class SupplierController extends Controller
 {
     /**
