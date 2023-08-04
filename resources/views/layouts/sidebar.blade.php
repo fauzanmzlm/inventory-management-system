@@ -74,10 +74,38 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="forms.html">
-                <i class="fab fa-fw fa-wpforms"></i>
-                <span>Forms</span>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseExpense"
+                aria-expanded="true" aria-controls="collapseBootstrap">
+                <i class="far fa-fw fa-window-maximize"></i>
+                <span>Expense</span>
             </a>
+            <div id="collapseExpense" class="collapse" aria-labelledby="headingBootstrap"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <router-link class="collapse-item" to="/store-expense">Add Expense</router-link>
+                    <router-link class="collapse-item" to="/expense">All Expense</router-link>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSalary"
+                aria-expanded="true" aria-controls="collapseBootstrap">
+                <i class="far fa-fw fa-window-maximize"></i>
+                <span>Salary</span>
+            </a>
+            <div id="collapseSalary" class="collapse" aria-labelledby="headingBootstrap"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <router-link class="collapse-item" to="/given-salary">Add Salary</router-link>
+                    <router-link class="collapse-item" to="/salary">All Salary</router-link>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <router-link class="nav-link" to="/stock">
+                <i class="fab fa-fw fa-wpforms"></i>
+                <span>Stock</span>
+            </router-link>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
