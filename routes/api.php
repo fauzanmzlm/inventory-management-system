@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Api\ExpenseController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\SupplierController;
 use App\Http\Controllers\Api\SalaryController;
@@ -30,6 +31,7 @@ Route::apiResource('/supplier', SupplierController::class);
 Route::apiResource('/category', CategoryController::class);
 Route::apiResource('/product', ProductController::class);
 Route::apiResource('/expense', ExpenseController::class);
+Route::apiResource('/customer', CustomerController::class);
 
 Route::post('/salary/paid/{id}', [SalaryController::class, 'Paid']);
 Route::get('/salary', [SalaryController::class, 'AllSalary']);
